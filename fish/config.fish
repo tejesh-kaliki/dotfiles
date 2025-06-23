@@ -1,4 +1,4 @@
-set -a PATH $PATH $HOME/go/bin
+set -a PATH $PATH $HOME/go/bin $HOME/.atuin/bin
 
 set -x NVM_DIR "$HOME/.nvm"
 if test -s "$NVM_DIR/nvm.sh"
@@ -27,6 +27,7 @@ end
 
 zoxide init fish | source
 vacuum completion fish | source
+atuin init fish | source
 
 # AWS completer
 test -x (which aws_completer); and complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
@@ -34,4 +35,10 @@ test -x (which aws_completer); and complete --command aws --no-files --arguments
 if status is-interactive
     # Commands to run in interactive sessions can go here
     # tide configure --auto --style=Lean --prompt_colors='True color' --show_time='24-hour format' --lean_prompt_height='Two lines' --prompt_connection=Disconnected --prompt_spacing=Compact --icons='Few icons' --transient=Yes
+
+    # VIM key bindings
+    fish_vi_key_bindings default
+
+    # Setup fish config
+    starship init fish | source
 end

@@ -1,24 +1,24 @@
-if test (uname) = "Darwin"
+if test (uname) = Darwin
     set -gx OS_TYPE mac
-else if test (uname) = "Linux"
+else if test (uname) = Linux
     set -gx OS_TYPE linux
 else
     set -gx OS_TYPE unknown
 end
 
-if test "$OS_TYPE" = "mac"
+if test "$OS_TYPE" = mac
     if test -d /opt/homebrew
-      set -gx HOMEBREW_PATH /opt/homebrew
+        set -gx HOMEBREW_PATH /opt/homebrew
     else if test -d /usr/local/Homebrew
-      set -gx HOMEBREW_PATH /usr/local/homebrew
+        set -gx HOMEBREW_PATH /usr/local/homebrew
     end
-else if test "$OS_TYPE" = "linux"
+else if test "$OS_TYPE" = linux
     if test -d /home/linuxbrew/.linuxbrew
-      set -gx HOMEBREW_PATH /home/linuxbrew/.linuxbrew
+        set -gx HOMEBREW_PATH /home/linuxbrew/.linuxbrew
     end
 end
 
-set -a PATH $PATH $HOME/go/bin $HOME/.atuin/bin
+set -a PATH $HOME/go/bin $HOME/.atuin/bin $HOME/.yarn/bin $HOME/.local/bin
 
 set -x NVM_DIR "$HOME/.nvm"
 if test -s "$NVM_DIR/nvm.sh"
@@ -35,8 +35,6 @@ if test -d $HOME/.docker/completions
 end
 # End of Docker CLI completions
 
-set -a PATH $HOME/.yarn/bin
-
 if test -f "$HOME/.local/bin/env"
     bass source "$HOME/.local/bin/env"
 end
@@ -46,16 +44,16 @@ if test -f "$HOMEBREW_PATH/bin/brew"
 end
 
 zoxide init fish | source
-vacuum completion fish | source
 atuin init fish | source
+
+if type -q vacuum
+    vacuum completion fish | source
+end
 
 # AWS completer
 test -x (which aws_completer); and complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
 
 if status is-interactive
-    # Commands to run in interactive sessions can go here
-    # tide configure --auto --style=Lean --prompt_colors='True color' --show_time='24-hour format' --lean_prompt_height='Two lines' --prompt_connection=Disconnected --prompt_spacing=Compact --icons='Few icons' --transient=Yes
-
     # VIM key bindings
     fish_vi_key_bindings default
 

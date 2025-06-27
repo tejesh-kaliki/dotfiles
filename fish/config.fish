@@ -43,6 +43,10 @@ if test -f "$HOMEBREW_PATH/bin/brew"
     eval "$($HOMEBREW_PATH/bin/brew shellenv)"
 end
 
+if test -d "/usr/local/go/bin"
+    set -a PATH /usr/local/go/bin
+end
+
 zoxide init fish | source
 atuin init fish | source
 

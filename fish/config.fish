@@ -33,6 +33,11 @@ end
 if test -d $HOME/.docker/completions
     set -a fish_complete_path $HOME/.docker/completions
 end
+
+if test -d /opt/nvim-linux-x86_64/bin 
+  set -gx PATH /opt/nvim-linux-x86_64/bin $PATH
+end
+
 # End of Docker CLI completions
 
 if test -f "$HOME/.local/bin/env"

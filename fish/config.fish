@@ -40,6 +40,10 @@ end
 
 # End of Docker CLI completions
 
+if test -d $HOME/.cargo/bin
+    set -a PATH $HOME/.cargo/bin
+end
+
 if test -f "$HOME/.local/bin/env"
     bass source "$HOME/.local/bin/env"
 end
@@ -48,7 +52,7 @@ if test -f "$HOMEBREW_PATH/bin/brew"
     eval "$($HOMEBREW_PATH/bin/brew shellenv)"
 end
 
-if test -d "/usr/local/go/bin"
+if test -d /usr/local/go/bin
     set -a PATH /usr/local/go/bin
 end
 

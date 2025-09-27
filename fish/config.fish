@@ -18,7 +18,7 @@ else if test "$OS_TYPE" = linux
     end
 end
 
-set -a PATH $HOME/go/bin $HOME/.atuin/bin $HOME/.yarn/bin $HOME/.local/bin
+set -a PATH $HOME/go/bin $HOME/.atuin/bin $HOME/.yarn/bin $HOME/.local/bin /usr/local/go/bin
 
 set -x NVM_DIR "$HOME/.nvm"
 if test -s "$NVM_DIR/nvm.sh"
@@ -34,8 +34,8 @@ if test -d $HOME/.docker/completions
     set -a fish_complete_path $HOME/.docker/completions
 end
 
-if test -d /opt/nvim-linux-x86_64/bin 
-  set -gx PATH /opt/nvim-linux-x86_64/bin $PATH
+if test -d /opt/nvim-linux-x86_64/bin
+    set -gx PATH /opt/nvim-linux-x86_64/bin $PATH
 end
 
 # End of Docker CLI completions
@@ -73,3 +73,6 @@ if status is-interactive
     # Setup fish config
     starship init fish | source
 end
+
+# FVM
+set --export PATH /home/tejesh/.fvm_flutter/bin $PATH

@@ -1,2 +1,39 @@
 fish/fish_variables
 nvim/lazy-lock.json
+Code/Cache/Cache_Data
+Code/CachedConfigurations/defaults/configurationDefaultsOverrides
+Code/CachedData/f220831ea2d946c0dcb0f3eaa480eb435a2c1260/chrome
+Code/CachedExtensionVSIXs
+Code/CachedProfilesData/__default__profile__
+Code/Code Cache
+Code/Crashpad
+Code/DawnGraphiteCache
+Code/DawnWebGPUCache
+Code/Dictionaries
+Code/GPUCache
+Code/Local Storage/leveldb
+Code/Service Worker
+Code/Session Storage
+Code/Shared Dictionary
+Code/User/History
+Code/User/globalStorage
+Code/User/workspaceStorage/09df29b988fb496445a1901449f42ab3
+Code/WebStorage/1/CacheStorage
+Code/WebStorage/2/CacheStorage
+Code/WebStorage/3/CacheStorage
+Code/WebStorage/4/CacheStorage
+Code/WebStorage/5/CacheStorage
+Code/WebStorage/7/CacheStorage
+Code/WebStorage
+Code/logs
+Code/Cookies
+Code/Cookies-journal
+Code/DIPS
+Code/Network Persistent State
+Code/Preferences
+Code/SharedStorage
+Code/TransportSecurity
+Code/Trust Tokens
+Code/Trust Tokens-journal
+Code/languagepacks.json
+Code/machineid

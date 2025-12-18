@@ -7,11 +7,23 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "tabs": {
+    "file_icons": false,
+    "git_status": false
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_branch_icon": false
+  },
+  "icon_theme": "Catppuccin Mocha",
+  "edit_predictions": {
+    "mode": "subtle"
+  },
   "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Catppuccin Mocha",
     "dark": "Catppuccin Mocha"
   },

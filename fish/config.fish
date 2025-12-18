@@ -67,6 +67,17 @@ if type -q mise
     mise hook-env --shell=fish | source
 end
 
+if test -d $HOME/Android/Sdk
+    set -Ux ANDROID_HOME $HOME/Android/Sdk
+    set -a PATH $ANDROID_HOME/tools $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools $ANDROID_HOME/cmdline-tools/latest/bin
+    set -a PATH $ANDROID_HOME/emulator
+    set ANDROID_AVD_HOME $HOME/.config/.android/avd
+end
+
+if test -d $HOME/.npm-global
+    set -a PATH $HOME/.npm-global/bin
+end
+
 # AWS completer
 test -x (which aws_completer); and complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
 

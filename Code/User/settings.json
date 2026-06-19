@@ -3,7 +3,7 @@
   "workbench.colorTheme": "Catppuccin Mocha",
   "explorer.confirmDragAndDrop": false,
   "gitlens.advanced.messages": {
-    "suppressLineUncommittedWarning": true
+    "suppressLineUncommittedWarning": true,
   },
   "editor.formatOnSave": true,
   "[dart]": {
@@ -12,8 +12,39 @@
     "editor.rulers": [80],
     "editor.selectionHighlight": false,
     "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": "off"
+    "editor.wordBasedSuggestions": "off",
   },
   "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
-  "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose"
+  "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "chat.viewTitle.enabled": false,
+  "chat.viewSessions.enabled": false,
+  "chat.agent.codeBlockProgress": false,
+  "chat.agent.enabled": false,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+  },
+  "[postgres]": {
+    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode",
+  },
+  "Prettier-SQL.SQLFlavourOverride": "postgresql",
+  "Prettier-SQL.insertSpacesOverride": false,
+  "diffEditor.renderSideBySide": true,
+  "vim.leader": " ",
+  "vim.enableNeovim": true,
+  "vim.neovimUseConfigFile": true,
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false,
+    "<C-p>": false,
+  },
+  "terminal.integrated.initialHint": false,
+  "git.autofetch": true,
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "[sql]": {
+    "editor.formatOnSave": false,
+  },
+  "git.confirmSync": false,
 }

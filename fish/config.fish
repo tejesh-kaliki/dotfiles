@@ -38,6 +38,10 @@ if test -d /opt/nvim-linux-x86_64/bin
     set -gx PATH /opt/nvim-linux-x86_64/bin $PATH
 end
 
+if test -d /opt/cuda/bin
+    set -gx PATH /opt/cuda/bin $PATH
+end
+
 # End of Docker CLI completions
 
 if test -d $HOME/.cargo/bin
@@ -54,6 +58,14 @@ end
 
 if test -d /usr/local/go/bin
     set -a PATH /usr/local/go/bin
+end
+
+if test -d /home/tejesh/fvm/versions/stable/bin
+    set -a PATH /home/tejesh/fvm/versions/stable/bin
+end
+
+if test -d /home/tejesh/.pub-cache/bin
+    set -a PATH /home/tejesh/.pub-cache/bin
 end
 
 zoxide init fish | source
@@ -91,3 +103,5 @@ end
 
 # FVM
 set --export PATH /home/tejesh/.fvm_flutter/bin $PATH
+
+set --export LIBVIRT_DEFAULT_URI "qemu:///system"

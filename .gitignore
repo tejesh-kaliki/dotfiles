@@ -41,3 +41,5 @@ Code/Cache/No_Vary_Search
 Code/CachedData
 Code/.org.chromium.*
 /Code/User/workspaceStorage
+/fish/functions/ssh-ec2.fish
+/fish/functions/ssh-institute-os.fish

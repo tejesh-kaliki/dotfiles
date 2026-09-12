@@ -60,12 +60,8 @@ if test -d /usr/local/go/bin
     set -a PATH /usr/local/go/bin
 end
 
-if test -d /home/tejesh/fvm/versions/stable/bin
-    set -a PATH /home/tejesh/fvm/versions/stable/bin
-end
-
-if test -d /home/tejesh/.pub-cache/bin
-    set -a PATH /home/tejesh/.pub-cache/bin
+if test -d $HOME/.pub-cache/bin
+    set -a PATH $HOME/.pub-cache/bin
 end
 
 zoxide init fish | source
@@ -101,7 +97,14 @@ if status is-interactive
     starship init fish | source
 end
 
-# FVM
-set --export PATH /home/tejesh/.fvm_flutter/bin $PATH
+# FVM — global default Flutter SDK; switch it with `fvm global <version>`.
+# Per-project pins (.fvmrc) are NOT picked up here; use `fvm flutter` / `fvm dart`.
+if test -d $HOME/fvm/default/bin
+    set -gx PATH $HOME/fvm/default/bin $PATH
+end
 
 set --export LIBVIRT_DEFAULT_URI "qemu:///system"
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
